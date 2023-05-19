@@ -1,3 +1,4 @@
+import Layout from '@/components/layout/Layout'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 const queryClient = new QueryClient({
@@ -11,7 +12,9 @@ const queryClient = new QueryClient({
 const MainProvider = ({ children }: { children: React.ReactElement }) => {
    return (
       <QueryClientProvider client={queryClient}>
-         {children}
+         <Layout>
+            {children}
+         </Layout>
       </QueryClientProvider>
    )
 }
