@@ -1,10 +1,10 @@
-import { FC } from 'react'
-
 import Navigation from './Navigation/Navigation'
 import Sidebar from './Sidebar/Sidebar'
+
 import styles from './Layout.module.scss'
 
-const Layout: FC = ({ children }) => {
+
+const Layout = ({ children }: { children: React.ReactElement }) => {
 	return (
 		<div className={styles.layout}>
 			<Navigation />
