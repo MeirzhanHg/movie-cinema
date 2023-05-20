@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import { IMovieList } from './movie-list.interface'
 
-import styles from './MoviesList.module.scss'
 import MovieItem from './MovieItem'
 import Link from 'next/link'
+
+import styles from './MoviesList.module.scss'
 
 const MoviesList: FC<IMovieList> = ({ link, title, movies }) => {
    return (
