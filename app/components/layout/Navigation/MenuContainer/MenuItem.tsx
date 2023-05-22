@@ -17,7 +17,7 @@ const MenuItem: FC<{ item: IMenuItem }> = ({ item }) => {
 				[styles.active]: asPath === item.link,
 			})}
 		>
-			<Link className={styles.a_link} href={item.link}>
+			<Link href={item.link}>
 				<MaterialIcon name={item.icon} />
 				<span>{item.title}</span>
 			</Link>

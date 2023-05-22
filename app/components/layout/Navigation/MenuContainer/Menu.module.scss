@@ -6,13 +6,13 @@
 	}
 
 	.ul {
-		> li {
+		>li {
 			@apply px-8 border-r-4 border-r-transparent transition-colors;
 
-			> .a_link {
+			>a {
 				@apply flex items-center text-gray-600 px-3 mt-6 cursor-pointer;
 
-				> span {
+				>span {
 					@apply ml-3 text-lg;
 
 					&:hover {
@@ -20,12 +20,12 @@
 					}
 				}
 
-				> svg {
+				>svg {
 					@apply text-2lg;
 				}
 
-				> span,
-				> svg {
+				>span,
+				>svg {
 					@apply transition-colors;
 				}
 			}
@@ -33,11 +33,11 @@
 			&.active {
 				@apply border-r-primary;
 
-				> a > span {
+				>a>span {
 					@apply text-white;
 				}
 
-				> a > svg {
+				>a>svg {
 					@apply fill-primary;
 				}
 			}
