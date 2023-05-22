@@ -5,7 +5,7 @@ import NextProgressBar from 'nextjs-progressbar'
 import { FC } from 'react'
 import FavIcons from './FavIcons'
 
-const HeadProvider: FC = ({ children }) => {
+const HeadProvider: FC<({ children: any })> = ({ children }) => {
    return (
       <>
          <NextProgressBar
