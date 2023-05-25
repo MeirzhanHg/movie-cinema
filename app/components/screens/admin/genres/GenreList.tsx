@@ -7,14 +7,14 @@ import { useGenres } from './useGenres'
 import AdminTable from '@/components/ui/admin-table/AdminTable/AdminTable'
 
 const GenreList: FC = () => {
-   const { handleSearch, isLoading, searchTerm, deleteAsync, data } = useGenres()
+   const { handleSearch, isLoading, searchTerm, deleteAsync, data, createAsync } = useGenres()
 
    return (
       <Meta title='Genres'>
          <AdminNavigation />
          <Heading title='Genres' />
 
-         <AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} />
+         <AdminHeader handleSearch={handleSearch} searchTerm={searchTerm} onClick={createAsync} />
          <AdminTable
             isLoading={isLoading}
             removeHandler={deleteAsync}
