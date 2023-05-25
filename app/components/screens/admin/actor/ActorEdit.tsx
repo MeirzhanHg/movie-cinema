@@ -19,13 +19,21 @@ import { stripHtml } from 'string-strip-html'
 import dynamic from 'next/dynamic'
 
 import formStyles from '../../../ui/form-elements/admin-form.module.scss'
+import UploadField from '@/components/ui/form-elements/UploadField/UploadField'
 
 const DynamicTextEditor = dynamic(() => import('@/components/ui/form-elements/TextEditor'), {
    ssr: false
 })
 
 const ActorEdit: FC = () => {
-   const { handleSubmit, register, formState: { errors }, setValue, getValues, control } = useForm<IActorEditInput>(
+   const {
+      handleSubmit,
+      register,
+      formState: { errors },
+      setValue,
+      getValues,
+      control
+   } = useForm<IActorEditInput>(
       { mode: 'onChange' }
    )
 
@@ -52,22 +60,27 @@ const ActorEdit: FC = () => {
                         setValue('slug', generateSlug(getValues('name')))
                      }} />
 
-                     {/*    <Controller
-                     control={control}
-                     name='photo'
-                     defaultValue=''
-                     render={({
-                        field: {
-                           value, onChange
-                        },
-                        fieldState: { error }
-                     }) => (
-                        photo upload
-                     )}
-                     rules={{
-                        required: 'Photo is required'
-                     }}
-                  /> */}
+                     <Controller
+                        control={control}
+                        name='photo'
+                        defaultValue=''
+                        render={({
+                           field: {
+                              value, onChange
+                           },
+                           fieldState: { error }
+                        }) => (
+                           <UploadField
+                              onChange={onChange}
+                              value={value}
+                              error={error}
+                              folder='actors'
+                              placeholder='Photo' />
+                        )}
+                        rules={{
+                           required: 'Photo is required'
+                        }}
+                     />
 
                   </div>
                   <Button>Update</Button>
