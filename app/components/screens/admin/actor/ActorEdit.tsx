@@ -13,17 +13,9 @@ import SlugField from '@/components/ui/form-elements/SlugField/SlugField'
 import generateSlug from '@/utils/string/generateSlug'
 import Button from '@/components/ui/form-elements/Button'
 
-
-import { stripHtml } from 'string-strip-html'
-
-import dynamic from 'next/dynamic'
-
-import formStyles from '../../../ui/form-elements/admin-form.module.scss'
 import UploadField from '@/components/ui/form-elements/UploadField/UploadField'
 
-const DynamicTextEditor = dynamic(() => import('@/components/ui/form-elements/TextEditor'), {
-   ssr: false
-})
+import formStyles from '../../../ui/form-elements/admin-form.module.scss'
 
 const ActorEdit: FC = () => {
    const {
