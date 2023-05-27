@@ -19,7 +19,9 @@ const Slider: FC<ISlider> = ({ slides, buttonTitle }) => {
    return (
       <div className={styles.slider}>
 
-         <CSSTransition in={slideIn} classNames='slide-animation' timeout={300} unmountOnExit>
+         <CSSTransition
+            in={slideIn} classNames='slide-animation'
+            timeout={300} unmountOnExit>
             <SlideItem slide={slides[index]} buttonTitle={buttonTitle} />
          </CSSTransition>
 

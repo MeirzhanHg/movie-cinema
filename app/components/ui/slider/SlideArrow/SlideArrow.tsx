@@ -10,18 +10,20 @@ interface ISlideArrow {
    clickHandler: () => void
 }
 
-const SlideArrow: FC<ISlideArrow> = ({ clickHandler, variant }) => {
+const SlideArrow: FC<ISlideArrow> = ({ variant, clickHandler }) => {
    const isLeft = variant === 'left'
 
-
-   return <button onClick={clickHandler} className={
-      cn(styles.arrow, {
-         [styles.left]: isLeft,
-         [styles.right]: !isLeft
-      })
-   }>
-      <MaterialIcon name={isLeft ? 'MdChevronLeft' : 'MdChevronRight'} />
-   </button>
+   return (
+      <button
+         onClick={clickHandler}
+         className={cn(styles.arrow, {
+            [styles.left]: isLeft,
+            [styles.right]: !isLeft,
+         })}
+      >
+         <MaterialIcon name={isLeft ? 'MdChevronLeft' : 'MdChevronRight'} />
+      </button>
+   )
 }
 
 export default SlideArrow

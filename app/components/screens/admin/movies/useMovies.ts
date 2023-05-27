@@ -19,7 +19,7 @@ export const useMovies = () => {
 
 	const queryData = useQuery(
 		['movie list', debouncedSearch],
-		() => MovieService.getAll(debouncedSearch),
+		() => MovieService.getMovies(debouncedSearch),
 		{
 			select: ({ data }) =>
 				data.map(
